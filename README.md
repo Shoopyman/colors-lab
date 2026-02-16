@@ -8,6 +8,7 @@ The server is hosted on digital ocean using the LAMP API droplet.  It contains a
 The domain is through IONOS and was connected to the API server using putty.
 
 To access the application all you need to do is go to the following link. 
+
 asdfjalkjsdbf.com
 
 This will allow you to reach the application and see what is going on!  Thank you for checking out my project!
