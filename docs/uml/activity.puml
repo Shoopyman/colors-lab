@@ -1,0 +1,39 @@
+@startuml activity
+
+title Colors Web Application - Activity Diagram
+
+start
+
+:Enter username & password;
+:POST /Login.php;
+
+if (Valid credentials?) then (yes)
+  :Save session cookie\n(userId, firstName, lastName);
+  :Redirect to color.html;
+
+  repeat
+
+    fork
+      :Enter color name;
+      :POST /AddColor.php;
+      :Show "Color added";
+    fork again
+      :Enter search term;
+      :POST /SearchColors.php;
+      :Display color list;
+    end fork
+
+  repeat while (Continue using app?) is (yes)
+  ->no;
+
+  :Log out / clear session cookie;
+  :Redirect to index.html;
+
+else (no)
+  :Show error message;
+  :Return to login;
+endif
+
+stop
+
+@enduml
