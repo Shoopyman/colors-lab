@@ -1,0 +1,63 @@
+@startuml class
+
+title Colors Web Application - Class Diagram
+
+package "Frontend (JavaScript)" {
+  class "code.js" {
+    - userId : int
+    - firstName : string
+    - lastName : string
+    --
+    + doLogin() : void
+    + doLogout() : void
+    + saveCookie() : void
+    + readCookie() : void
+    + addColor() : void
+    + searchColor() : void
+  }
+}
+
+package "Backend (PHP Endpoints)" {
+  class Login <<endpoint>> {
+    + POST(login : string, password : string) : JSON
+    ' Returns: { id, firstName, lastName, error }
+  }
+
+  class AddColor <<endpoint>> {
+    + POST(color : string, userId : int) : JSON
+    ' Returns: { error }
+  }
+
+  class SearchColors <<endpoint>> {
+    + POST(search : string, userId : int) : JSON
+    ' Returns: { results[], error }
+  }
+}
+
+package "Database (MySQL)" {
+  class Users <<table>> {
+    + id : int <<PK>>
+    + login : varchar
+    + password : varchar
+    + firstName : varchar
+    + lastName : varchar
+  }
+
+  class Colors <<table>> {
+    + id : int <<PK>>
+    + UserId : int <<FK>>
+    + Name : varchar
+  }
+}
+
+"code.js" ..> Login         : XHR POST
+"code.js" ..> AddColor      : XHR POST
+"code.js" ..> SearchColors  : XHR POST
+
+Login        --> Users  : SELECT (authenticate)
+AddColor     --> Colors : INSERT
+SearchColors --> Colors : SELECT WHERE Name LIKE ?
+
+Users "1" --> "0..*" Colors : owns
+
+@enduml
