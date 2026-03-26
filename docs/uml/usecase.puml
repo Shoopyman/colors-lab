@@ -1,0 +1,30 @@
+@startuml usecase
+
+title Colors Web Application - Use Case Diagram
+
+left to right direction
+
+actor User
+database "MySQL\nDatabase" as DB
+
+rectangle "Colors Web Application" {
+  usecase "Log in" as UC1
+  usecase "Log out" as UC2
+  usecase "Add color" as UC3
+  usecase "Search colors" as UC4
+  usecase "Manage session cookie" as UC5
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+
+UC1 ..> UC5 : <<include>>
+UC2 ..> UC5 : <<include>>
+
+UC1 --> DB : SELECT Users
+UC3 --> DB : INSERT Colors
+UC4 --> DB : SELECT Colors
+
+@enduml
