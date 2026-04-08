@@ -25,4 +25,4 @@ jobs:
       run: npx stylelint "**/*.css"
 
     - name: Run ESLint
-      run: npx eslint "**/*.js"
+      run: npx eslint .
