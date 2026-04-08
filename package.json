@@ -1,0 +1,30 @@
+{
+  "name": "colors-lab",
+  "version": "1.0.0",
+  "description": "Colors lab project for Sam Trout in POOSD at UCF in 2026.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shoopyman/colors-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shoopyman/colors-lab/issues"
+  },
+  "homepage": "https://github.com/Shoopyman/colors-lab#readme",
+  "devDependencies": {
+    "eslint": "^10.2.0",
+    "htmlhint": "^1.9.2",
+    "stylelint": "^17.6.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
