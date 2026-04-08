@@ -13,7 +13,7 @@ body
     color: #FFF;
 }
 
-login-Div
+login-div
 {
     font-size: 30px;
     width: 70%;
@@ -22,7 +22,7 @@ login-Div
     background-color: #b2b2b2;
 }
 
-logged-In-Div
+logged-in-div
 {
     font-size: 30px;
     width: 70%;
@@ -31,7 +31,7 @@ logged-In-Div
     background-color: #b2b2b2;
 }
 
-access-UID-iv
+access-uid-iv
 {
     font-size: 30px;
     width: 70%;
@@ -55,22 +55,22 @@ access-UID-iv
     opacity: 0.5;
 }
 
-login-Name
+login-name
 {
 	font-size: 30px;
 }
 
-login-Password
+login-password
 {
 	font-size: 30px;
 }
 
-search-Text
+search-text
 {
 	font-size: 30px;
 }
 
-color-Text
+color-text
 {
 	font-size: 30px;
 }
@@ -95,7 +95,7 @@ inner-title{
     color: #95060a;
 }
 
-login-Result{
+login-result{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
@@ -106,14 +106,14 @@ login-Result{
     color: #95060a;
 }
 
-user-Name{
+user-name{
     display: inline-block;
     width: 80%;
     margin-left: 10%;
     text-align: center;
 }
 
-logout-Button{
+logout-button{
     width: 20%;
     margin-left: 40%;
 }
@@ -126,11 +126,11 @@ select{
     font-family: Ubuntu, sans-serif;
 }
 
-color-Search-Result{
+color-search-result{
     display: none;
 }
 
-color-Add-Result{
+color-add-result{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
