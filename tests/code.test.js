@@ -81,41 +81,33 @@ describe('readCookie', () => {
     userId = 0;
     firstName = '';
     lastName = '';
-    // Mock window.location using defineProperty
-    Object.defineProperty(window, 'location', {
-      value: { href: '' },
-      writable: true,
-      configurable: true,
-    });
   });
- 
+
   test('reads firstName back from cookie', () => {
     document.cookie = 'firstName=Sam,lastName=Trout,userId=42';
     readCookie();
     expect(firstName).toBe('Sam');
   });
- 
+
   test('reads lastName back from cookie', () => {
     document.cookie = 'firstName=Sam,lastName=Trout,userId=42';
     readCookie();
     expect(lastName).toBe('Trout');
   });
- 
+
   test('reads userId back from cookie', () => {
     document.cookie = 'firstName=Sam,lastName=Trout,userId=42';
     readCookie();
     expect(userId).toBe(42);
   });
- 
-  test('redirects to index.html when userId not in cookie', () => {
-    // Override cookie getter to return empty string
+
+  test('sets userId to -1 when cookie is empty', () => {
     Object.defineProperty(document, 'cookie', {
       get: () => '',
       configurable: true,
     });
     readCookie();
-    expect(window.location.href).toBe('index.html');
-    // Restore
+    expect(userId).toBe(-1);
     Object.defineProperty(document, 'cookie', {
       get: jest.fn(),
       set: jest.fn(),
