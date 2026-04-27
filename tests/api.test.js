@@ -1,7 +1,7 @@
 /**
+ * @jest-environment node
+ *
  * Integration Tests for LAMP API Endpoints
- * Validates that each endpoint returns the correct JSON structure.
- * Uses axios to make HTTP requests (CommonJS compatible with Jest).
  */
  
 const axios = require('axios');
